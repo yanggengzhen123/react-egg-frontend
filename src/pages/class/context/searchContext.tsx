@@ -1,2 +1,8 @@
 import React from 'react';
-export const SearchContext = React.createContext();
+import { Action } from './index';
+export const SearchContext = React.createContext({
+  state: {
+    text: '',
+  },
+  dispatch: (action: Action) => {},
+});
