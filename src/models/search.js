@@ -27,6 +27,15 @@ export default {
         type: 'getLists',
         payload: res.lists
       })
+
+    },
+    *test() {
+      let temp = null
+      yield setTimeout(() => {
+        temp = 1
+      }, 1000
+
+      )
     }
   }
 };

@@ -14,7 +14,7 @@ export default class Search extends Component<any, any> {
   };
   handleSubmit = () => {
     this.context.dispatch({
-      type: 'LISTS',
+      type: 'TEXT',
       payload: this.state.value,
     });
   };

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { SearchContext } from './searchContext';
-
 export default class Consumer extends Component {
   constructor(props: any) {
     super(props);

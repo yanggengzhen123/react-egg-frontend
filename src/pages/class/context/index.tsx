@@ -5,10 +5,16 @@ import Lists from './lists';
 import { SearchContext } from './searchContext';
 // @ts-ignore
 import { getLists } from '../../../services/search.js';
+import Consumer from './consumer';
+import LazyLoad from '@/components/LazyLoad';
 export interface Action {
   [key: string]: string;
 }
-export default class componentNew extends Component {
+interface State {
+  text: string;
+  lists: [];
+}
+export default class componentNew extends Component<any, State> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -44,6 +50,7 @@ export default class componentNew extends Component {
         >
           <Search></Search>
           <Lists></Lists>
+          <Consumer></Consumer>
         </SearchContext.Provider>
       </div>
     );
