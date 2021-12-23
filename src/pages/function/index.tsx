@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { WingBlank, WhiteSpace, List } from 'antd-mobile';
 import { Link } from 'umi';
 export default function (props: any) {
-  const [state, setState] = useState();
-
-  useEffect(() => {}, []);
-
   return (
     <div>
       <WingBlank>
