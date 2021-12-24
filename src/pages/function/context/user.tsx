@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from './userContext';
+
 export default function (props: any) {
   const { state } = useContext(UserContext);
-  useEffect(() => {}, []);
+  console.log(state);
 
   return (
     <div>

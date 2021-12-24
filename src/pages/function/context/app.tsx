@@ -4,7 +4,7 @@ import User from './user';
 import { Button } from 'antd-mobile';
 
 export default function (props: any) {
-  const { state, dispatch }: any = useContext(UserContext);
+  const { state, dispatch } = useContext(UserContext);
   const handleLogin = () => {
     dispatch({
       type: 'LOGIN',

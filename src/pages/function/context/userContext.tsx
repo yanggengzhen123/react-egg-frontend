@@ -1,10 +1,5 @@
-import React, { useReducer } from 'react';
-interface State {
-  isLogin: boolean;
-  user: {
-    [key: string]: string;
-  };
-}
+import React, { useReducer, Dispatch } from 'react';
+export type exportInitState = typeof initState;
 interface Action {
   type: string;
   payload: boolean;
@@ -13,12 +8,14 @@ const initState = {
   isLogin: false,
   user: {
     id: '100',
-    name: 'john',
+    name: 'zhen',
   },
 };
-const UserContext = React.createContext<typeof initState>(initState);
-
-const reducer = (state: State, action: Action) => {
+interface Context {
+  state: typeof initState;
+  dispatch: Dispatch<Action>;
+}
+const reducer = (state: typeof initState, action: Action) => {
   switch (action.type) {
     case 'LOGIN':
       return {
@@ -27,11 +24,17 @@ const reducer = (state: State, action: Action) => {
       };
       break;
     default:
+      return state;
       break;
   }
 };
+const UserContext = React.createContext<Context>({
+  state: initState,
+  dispatch: () => {},
+});
 const UserContextProvider = (props: any) => {
   const [state, dispatch] = useReducer(reducer, initState);
+  console.log(state);
   return (
     <div>
       <UserContext.Provider value={{ state, dispatch }}>
