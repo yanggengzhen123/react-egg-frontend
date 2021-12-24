@@ -1,4 +1,14 @@
 import React, { useReducer } from 'react';
+interface State {
+  isLogin: boolean;
+  user: {
+    [key: string]: string;
+  };
+}
+interface Action {
+  type: string;
+  payload: boolean;
+}
 const initState = {
   isLogin: false,
   user: {
@@ -6,16 +16,10 @@ const initState = {
     name: 'john',
   },
 };
-const UserContext = React.createContext();
+const UserContext = React.createContext<typeof initState>(initState);
 
-const reducer = (state, action) => {
-  let aa = {
-    ...state,
-    isLogin: action.payload,
-  };
-  console.log(aa);
-
-  switch (state.type) {
+const reducer = (state: State, action: Action) => {
+  switch (action.type) {
     case 'LOGIN':
       return {
         ...state,
