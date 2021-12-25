@@ -12,7 +12,8 @@
     "strict": true,
     "paths": {
       "@/*": ["src/*"],
-      "@@/*": ["src/.umi/*"]
+      "@@/*": ["src/.umi/*"],
+      "@/hooks":["src/hooks/index"]
     },
     "allowSyntheticDefaultImports": true
   },

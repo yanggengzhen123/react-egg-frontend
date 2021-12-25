@@ -14,6 +14,14 @@ export default function (props: any) {
             <Link to="/function/context">context</Link>
           </List.Item>
           <WhiteSpace />
+          <List.Item>
+            <Link to="/function/customize">自定义Hook</Link>
+          </List.Item>
+          <WhiteSpace />
+          <List.Item>
+            <Link to="/function/store">think-react-store</Link>
+          </List.Item>
+          <WhiteSpace />
         </List>
       </WingBlank>
     </div>
